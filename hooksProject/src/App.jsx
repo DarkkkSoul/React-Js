@@ -5,22 +5,23 @@ import './App.css'
 
 function App() {
 
-  let count = 0 ;
+  let [count,setCount] = useState(0);
+
+  // let count = 0 ;
 
   function addValue(){
-    count ++;
-    console.log('added ',count);
-    
+    setCount(count = count + 1);
+    console.log('added ',count);    
   }
   function removeValue(){
-    count --;
-    console.log('removed',count);
-    
+    // count --;
+    setCount(count = count - 1);
+    console.log('removed',count);    
   }
 
   return (
     <>
-      <h1>Counter Project (Hooks) Counter:{count}</h1>
+      <h1>Counter Project (Hooks) Counter: {count}</h1>
       <h2>Count : {count}</h2>
 
       <button  
@@ -37,7 +38,7 @@ function App() {
         Decrease
       </button>
 
-      <p>Final count:{count}</p>
+      <b><p>Final count : {count}</p></b>
     </>
   )
 }
