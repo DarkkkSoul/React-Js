@@ -10,13 +10,12 @@ function App() {
   // let count = 0 ;
 
   function addValue(){
-    setCount(count = count + 1);
-    console.log('added ',count);    
+    if(count < 20) setCount(count = count + 1);
+    else alert('Limit Exceeded!');
   }
   function removeValue(){
-    // count --;
-    setCount(count = count - 1);
-    console.log('removed',count);    
+    if(count > 0)setCount(count = count - 1);
+    else alert('Limit Exceeded!');
   }
 
   return (
