@@ -7,8 +7,6 @@ function App() {
 
   let [count,setCount] = useState(0);
 
-  // let count = 0 ;
-
   function addValue(){
     if(count < 20) setCount(count = count + 1);
     else alert('Limit Exceeded!');
