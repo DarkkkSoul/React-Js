@@ -1,0 +1,9 @@
+.btn-div button{
+  margin: 1rem;
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.btn-div{
+  background-color: black;
+}
