@@ -2,8 +2,10 @@
   margin: 1rem;
   width: 5rem;
   height: 2.5rem;
+  border: 0.2rem solid blueviolet;
 }
 
 .btn-div{
-  background-color: black;
+  display: flex;
+  /* background-color: bla/ck; */
 }
