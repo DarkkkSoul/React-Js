@@ -4,25 +4,25 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [clr, setClr] = useState('white')
 
   function changeClr(clr){
     document.body.style.backgroundColor=clr;
   }
 
   return (    
-    <>
-      <div className='btn-div font-bold'>
-        <button className='bg-red-700' onClick={() => changeClr('red')}>Red</button>
-        <button className='bg-green-700' onClick={() => changeClr('green')}>Green</button>
-        <button className='bg-blue-700' onClick={() => changeClr('blue')}>Blue</button>
-        <button className='bg-gray-700' onClick={() => changeClr('gray')}>Gray</button>
-        <button className='bg-yellow-700' onClick={() => changeClr('yellow')}>Yellow</button>
-        <button className='bg-pink-700' onClick={() => changeClr('pink')}>Pink</button>
-        <button className='bg-white' onClick={() => changeClr('white')}>White</button>
-        <button className='bg-black text-white' onClick={() => changeClr('black')}>Black</button>
+    <div className='w-full h-screen'style={{backgroundColor:clr}} >
+      <div className='btn-div font-medium flex flex-wrap justify-center fixed inset-x-72 mt-10 rounded-2xl bg-teal-600'>
+        <button className='bg-red-700 text-white' onClick={() => setClr('red')}>Red</button>
+        <button className='bg-green-700 text-white' onClick={() => setClr('green')}>Green</button>
+        <button className='bg-blue-700 text-white' onClick={() => setClr('blue')}>Blue</button>
+        <button className='bg-gray-700 text-white text-gray-50' onClick={() => setClr('gray')}>Gray</button>
+        <button className='bg-yellow-500 text-white' onClick={() => setClr('yellow')}>Yellow</button>
+        <button className='bg-pink-700 text-white' onClick={() => setClr('pink')}>Pink</button>
+        <button className='bg-white' onClick={() => setClr('white')}>White</button>
+        <button className='bg-black text-white' onClick={() => setClr('black')}>Black</button>
       </div>
-    </>
+    </div>
   )
 }
 

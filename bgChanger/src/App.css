@@ -1,8 +1,9 @@
 .btn-div button{
   margin: 1rem;
-  width: 5rem;
-  height: 2.5rem;
-  border: 0.2rem solid blueviolet;
+  width: 6rem;
+  height: 3rem;
+  /* border: 0.2rem solid blueviolet; */
+  border-radius: 1.5rem;
 }
 
 .btn-div{
