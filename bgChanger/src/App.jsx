@@ -6,9 +6,6 @@ import './App.css'
 function App() {
   const [clr, setClr] = useState('white')
 
-  function changeClr(clr){
-    document.body.style.backgroundColor=clr;
-  }
 
   return (    
     <div className='w-full h-screen'style={{backgroundColor:clr}} >
