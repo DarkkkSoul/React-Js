@@ -1,7 +1,7 @@
 import React from "react";
 
-function Card(props){
-    return(        
+function Card(props) {
+    return (
         <div className="max-w-sm mx-auto mb-5 bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="relative">
                 <img className="w-full h-36 object-cover" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Profile Cover" />
@@ -16,7 +16,7 @@ function Card(props){
                 </div>
 
                 <p className="mt-4 text-gray-700 text-sm leading-relaxed">
-                    John is a passionate software engineer with over 5 years of experience in web development.
+                    {props.name} is a passionate software engineer with over 5 years of experience in web development.
                 </p>
             </div>
 

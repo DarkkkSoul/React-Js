@@ -7,7 +7,7 @@ function StateUse() {
 
     // GENERAL SYNTAX !!
     // const [variable , setVariable] = useState(defaultValue);
-    
+
     // variable -> statefull variable, and its default value 
     // will be given inside useState parenthesis, 
     // if we ever want to change the value of statefull variable, we do so 
@@ -15,36 +15,36 @@ function StateUse() {
 
     // ********CHANGE NAME***********
     const [name, setName] = useState("Chat GPT");
-    const nameChanged = () =>{      //always use callback function in onclick if using in inline methods
-        if(name === 'Chat GPT') setName("DeepSeek");  
+    const nameChanged = () => {      //always use callback function in onclick if using in inline methods
+        if (name === 'Chat GPT') setName("DeepSeek");
         else setName('Chat GPT');
     }
 
     // *********CHANGE AGE **********
     const [age, setAge] = useState(19);
-    let addYear = () =>{
-        setAge(age+1);
+    let addYear = () => {
+        setAge(age + 1);
     }
 
     // ********** TEXT FIELD **********
-    const [text, setText] = useState('Hello');   
-    function textChanged(event){
+    const [text, setText] = useState('');
+    function textChanged(event) {
         // console.log(event.target.value);
         setText(event.target.value);
     }
-    function resetBtn(){
-        setText('Hello');
+    function resetBtn() {
+        setText('');
     }
 
     // ********** CHECKBOX *********** 
     const [check, setCheck] = useState(false);
-    function isChecked(){
+    function isChecked() {
         setCheck(!check);
     }
 
     // ********* UPDATER FUNCTION *********
     const [year, setYear] = useState(2025);
-    function updatePreValue(){
+    function updatePreValue() {
         /* expected
         setYear(year+1);    //26
         setYear(year+1);    //27
@@ -53,9 +53,9 @@ function StateUse() {
         setYear(year+1);    //30
         */
         // updater function
-        setYear(y => y+1);//26
-        setYear(y => y+1);//27
-        setYear(y => y+1);//28
+        setYear(y => y + 1);//26
+        setYear(y => y + 1);//27
+        setYear(y => y + 1);//28
     }
 
 
@@ -64,15 +64,15 @@ function StateUse() {
             <div>
                 Change name
                 <div>I love {name}</div>
-                <button onClick={ nameChanged }> Change name </button>
+                <button onClick={nameChanged}> Change name </button>
             </div>
 
             <br /><br />
-            
+
             <div>
                 Change Age
                 <div>I am {age} years old</div>
-                <button onClick={ addYear }> +1 year </button>
+                <button onClick={addYear}> +1 year </button>
                 {/* <button onClick={()=>setAge(age = age+1)}>+1 year</button> */}
             </div>
 
@@ -81,7 +81,7 @@ function StateUse() {
             <div>
                 Text Field
                 <br />
-                <input type="text" value={text} onChange={textChanged} />
+                <input type="text" placeholder='Type something...' onChange={textChanged} />
                 <div>Your typing: {text}</div>
                 <button onClick={resetBtn}>Reset</button>
             </div>
@@ -89,10 +89,10 @@ function StateUse() {
             <br /><br />
 
             <div>
-                CheckBox 
+                CheckBox
                 <br />
-                <span><input type="checkbox"   onClick={isChecked} /> Tick the CheckBox</span>
-                <div>The CheckBox is {check ? 'checked': 'not checked'}</div>
+                <span><input type="checkbox" onClick={isChecked} /> Tick the CheckBox</span>
+                <div>The CheckBox is {check ? 'checked' : 'not checked'}</div>
             </div>
 
             <br /><br />
