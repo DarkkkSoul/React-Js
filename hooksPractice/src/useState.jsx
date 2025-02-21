@@ -61,6 +61,7 @@ function StateUse() {
 
     return (
         <>
+            <h1>useState Hook</h1>
             <div>
                 Change name
                 <div>I love {name}</div>
@@ -104,7 +105,7 @@ function StateUse() {
             </div>
 
             {/* Continue reading from "Updating objects and arrays in state" !! */}
-
+            <hr />
         </>
     )
 }
