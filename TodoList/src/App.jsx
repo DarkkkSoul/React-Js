@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { TodoProvider } from './contexts/TodoContext'
 
@@ -31,6 +31,21 @@ function App() {
                 : prevTask
         ));
     };
+
+    //Add tasks to local storage
+    useEffect(() => {
+        const tasks = JSON.parse(localStorage.getItem("tasks"));
+
+        if (tasks && tasks.length > 0) {
+            setTasks(tasks);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
+
+
 
     return (
         <TodoProvider value={{

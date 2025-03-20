@@ -9,7 +9,7 @@ export const TodoContext = createContext({
         taskId: 1,
         task: 'complete todo app',
         isCompleted: false
-    }
+    },
         // ,{},{}  // first we will take only info of one task, remaining are left empty   
     ],
 
