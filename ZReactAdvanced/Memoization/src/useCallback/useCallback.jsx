@@ -1,28 +1,40 @@
-import React, { useState } from 'react'
-import InputBar from './InputBar'
+import React, { useState, useCallback } from 'react'
+import SearchBar from './SearchBar'
 
 const allNames = ["John", "Rock", "Alice", "Kane"];
-function useCallback() {
-    const [names, setNames] = useState(allNames);
+
+function UseCallbackDemo() {
+    const [names, setNames] = useState(() => [...allNames]);
 
     const handleShuffle = () => {
-        setNames(allNames.sort(() => Math.random() - 0.5));
+        setNames(prev => [...prev].sort(() => Math.random() - 0.5));
     }
 
+    const handleQuery = useCallback(
+        (text) => {
+            const q = text.toLowerCase();
+            const filteredNames = allNames.filter((name) => (
+                name.toLowerCase().includes(q)
+            ));
+            setNames(filteredNames);
+        },
+        []
+    );
+
     return (
-        < div >
+        <div>
             <div>
                 <button onClick={handleShuffle}>
                     Shuffle
                 </button>
                 <div>
-                    <InputBar />
+                    <SearchBar onChange={handleQuery} />
                 </div>
             </div>
             <div>
                 {
-                    names.map((n, i) => {
-                        return <div key={i}>{n}</div>
+                    names.map((n) => {
+                        return <div key={n}>{n}</div>
                     })
                 }
             </div>
@@ -30,4 +42,4 @@ function useCallback() {
     )
 }
 
-export default useCallback
+export default UseCallbackDemo
